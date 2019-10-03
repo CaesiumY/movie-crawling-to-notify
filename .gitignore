@@ -104,3 +104,6 @@ myvenv
 
 # mypy
 .mypy_cache/
+
+# secret token
+token.json
