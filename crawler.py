@@ -29,9 +29,9 @@ def crawling_function():
         messageSuccess = D_DAY + "일 " + MOVIE + "의 예매가 열렸습니다."
         bot.sendMessage(chat_id=token_json["user_id"], text=messageSuccess)
         sched.pause()
-    else:
-        messageFailure = D_DAY + "일 " + MOVIE + "의 예매가 열리지 않았습니다."
-        bot.sendMessage(chat_id=token_json["user_id"], text=messageFailure)
+    # else:
+    #     messageFailure = D_DAY + "일 " + MOVIE + "의 예매가 열리지 않았습니다."
+    #     bot.sendMessage(chat_id=token_json["user_id"], text=messageFailure)
 
 
 sched = BlockingScheduler()
