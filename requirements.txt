@@ -1,3 +1,4 @@
+APScheduler==3.6.1
 asn1crypto==1.0.0
 astroid==2.3.1
 autopep8==1.4.4
@@ -17,10 +18,12 @@ pycodestyle==2.5.0
 pycparser==2.19
 pylint==2.4.2
 python-telegram-bot==12.1.1
+pytz==2019.2
 requests==2.22.0
 six==1.12.0
 soupsieve==1.9.4
 tornado==6.0.3
 typed-ast==1.4.0
+tzlocal==2.0.0
 urllib3==1.25.6
 wrapt==1.11.2
