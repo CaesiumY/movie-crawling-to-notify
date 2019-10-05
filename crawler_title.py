@@ -8,8 +8,9 @@ with open('token.json') as f:
     token_json = json.loads(f.read())
 
 bot = telegram.Bot(token=token_json["token"])
-D_DAY = "12"
+D_DAY = "09"
 MOVIE = "조커"
+TIME = 10
 
 url = 'http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=01&theatercode=0150&date=201910' + D_DAY
 html = requests.get(url)
@@ -27,11 +28,12 @@ def crawling_function():
     if(MOVIE in titleMovie and day == D_DAY):
         messageSuccess = D_DAY + "일 " + MOVIE + "의 예매가 열렸습니다."
         bot.sendMessage(chat_id=token_json["user_id"], text=messageSuccess)
+        sched.pause()
     else:
         messageFailure = D_DAY + "일 " + MOVIE + "의 예매가 열리지 않았습니다."
         bot.sendMessage(chat_id=token_json["user_id"], text=messageFailure)
 
 
 sched = BlockingScheduler()
-sched.add_job(crawling_function, 'interval', seconds=30)
+sched.add_job(crawling_function, 'interval', seconds=TIME)
 sched.start()
